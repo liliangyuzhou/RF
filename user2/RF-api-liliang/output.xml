@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.0b4 on win32)" generated="20190802 14:38:21.043" rpa="false">
+<suite id="s1" name="RF-api-liliang" source="D:\user2\RF-api-liliang">
+<suite id="s1-s1" name="验证自定义第三方库" source="D:\user2\RF-api-liliang\验证自定义第三方库.robot">
+<test id="s1-s1-t1" name="测试用例">
+<kw name="Get Cases" library="ExcelLibrary">
+<arguments>
+<arg>.//case1.xlsx</arg>
+<arg>verifyUserAuth</arg>
+</arguments>
+<assign>
+<var>${s}</var>
+</assign>
+<msg timestamp="20190802 14:38:21.668" level="INFO">${s} = [{'case_id': 1, 'title': '正常发送验证码', 'method': 'sendMCode', 'url': 'sms-service-war-1.0/ws/smsFacade.ws?wsdl', 'data': '{"client_ip": "#ip#", "tmpl_id": "1", "mobile": "#mobile#"}', 'expected': 'ok', '...</msg>
+<status status="PASS" starttime="20190802 14:38:21.626" endtime="20190802 14:38:21.668"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${s}[0][case_id]</arg>
+</arguments>
+<msg timestamp="20190802 14:38:21.669" level="INFO">1</msg>
+<status status="PASS" starttime="20190802 14:38:21.669" endtime="20190802 14:38:21.669"></status>
+</kw>
+<kw name="${item} IN [ @{s} ]" type="for">
+<kw name="${item} = {'case_id': 1, 'title': '正常发送验证码', 'method': 'sendMCode', 'url': 'sms-service-war-1.0/ws/smsFacade.ws?wsdl', 'data': '{&quot;client_ip&quot;: &quot;#ip#&quot;, &quot;tmpl_id&quot;: &quot;1&quot;, &quot;mobile&quot;: &quot;#mobile#&quot;}', 'expected': 'ok', 's..." type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${item}[case_id]</arg>
+<arg>${item}[title]</arg>
+</arguments>
+<msg timestamp="20190802 14:38:21.671" level="FAIL">Invalid log level '正常发送验证码'.</msg>
+<status status="FAIL" starttime="20190802 14:38:21.670" endtime="20190802 14:38:21.671"></status>
+</kw>
+<status status="FAIL" starttime="20190802 14:38:21.670" endtime="20190802 14:38:21.671"></status>
+</kw>
+<status status="FAIL" starttime="20190802 14:38:21.670" endtime="20190802 14:38:21.671"></status>
+</kw>
+<status status="FAIL" starttime="20190802 14:38:21.625" endtime="20190802 14:38:21.672" critical="yes">Invalid log level '正常发送验证码'.</status>
+</test>
+<status status="FAIL" starttime="20190802 14:38:21.120" endtime="20190802 14:38:21.672"></status>
+</suite>
+<status status="FAIL" starttime="20190802 14:38:21.096" endtime="20190802 14:38:21.674"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="RF-api-liliang">RF-api-liliang</stat>
+<stat pass="0" fail="1" id="s1-s1" name="验证自定义第三方库">RF-api-liliang.验证自定义第三方库</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

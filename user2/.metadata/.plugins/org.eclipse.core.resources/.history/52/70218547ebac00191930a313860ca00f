@@ -1,0 +1,5 @@
+*** Settings ***
+
+*** Test Cases ***
+这是一个测试
+    Log    message=凯峰    

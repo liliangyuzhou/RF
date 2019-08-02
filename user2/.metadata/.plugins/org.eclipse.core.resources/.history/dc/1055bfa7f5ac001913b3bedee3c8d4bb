@@ -1,0 +1,4 @@
+*** Test Cases ***
+两数求和
+    ${res}    Evaluate    100+200    
+    Log    ${res}    

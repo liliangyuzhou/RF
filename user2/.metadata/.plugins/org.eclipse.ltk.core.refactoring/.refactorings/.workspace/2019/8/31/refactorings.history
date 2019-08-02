@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;test_lemon/mylibrary/exceldo.py&apos;" deleteContents="false" description="Delete resource &apos;test_lemon/mylibrary/exceldo.py&apos;" element1="/test_lemon/mylibrary/exceldo.py" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1564647965222"/>&#x0A;&#x0A;</session>

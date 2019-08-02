@@ -1,0 +1,30 @@
+*** Settings ***
+Library    RequestsLibrary
+Test Template    post接口请求   
+Variables    ../python变量.py
+ 
+
+*** Keywords ***
+get接口请求
+    [Arguments]    ${url}    ${data}    ${expected}
+    Create Session    lemon    http://test.lemonban.com/
+    ${res}=    Get Request    lemon    ${url}    params=${data}
+    Should Be Equal    ${expected}    ${res.status_code} 
+    Log    ${res.status_code}    
+    Log    ${res.json()}
+      
+    
+post接口请求  
+    [Arguments]    ${url}    ${data}     ${expected}
+    Create Session    lemon    http://test.lemonban.com/
+    ${res}=    Post Request    lemon    ${url}    data=${data}
+    Should Be Equal    ${expected}    ${res.status_code} 
+    Log    ${res.status_code}    
+    Log    ${res.json()}     
+    
+    
+*** Test Cases ***
+登录接口    futureloan/mvc/api/member/register     ${data1}    200
+   
+
+        

@@ -1,0 +1,5 @@
+*** Settings ***
+Library    RequestsLibrary    
+*** Test Cases ***
+接口请求
+    ${res}=    Get Request    alias    uri    

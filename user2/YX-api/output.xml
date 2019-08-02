@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.0b4 on win32)" generated="20190801 16:06:29.260" rpa="false">
+<suite id="s1" name="YX-api" source="D:\user2\YX-api">
+<suite id="s1-s1" name="TestCases" source="D:\user2\YX-api\TestCases">
+<suite id="s1-s1-s1" name="Inter Get quest" source="D:\user2\YX-api\TestCases\Inter_Get_quest.robot">
+<test id="s1-s1-s1-t1" name="登录接口">
+<kw name="接口请求">
+<arguments>
+<arg>post</arg>
+<arg>futureloan/mvc/api/member/register</arg>
+<arg>${data1}</arg>
+<arg>200</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${method}"=="post"</arg>
+<arg>post接口请求</arg>
+<arg>url=${url}</arg>
+<arg>data=${data}</arg>
+<arg>expected=${expected}</arg>
+<arg>ELSE IF</arg>
+<arg>"${method}"=="get"</arg>
+<arg>get接口请求</arg>
+<arg>url=${url}</arg>
+<arg>data=${data}</arg>
+<arg>expected= ${expected}</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>不适用此方法</arg>
+</arguments>
+<kw name="post接口请求">
+<arguments>
+<arg>url=${url}</arg>
+<arg>data=${data}</arg>
+<arg>expected=${expected}</arg>
+</arguments>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>lemon</arg>
+<arg>http://test.lemonban.com/</arg>
+</arguments>
+<msg timestamp="20190801 16:06:29.441" level="INFO">Creating Session using : alias=lemon, url=http://test.lemonban.com/, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20190801 16:06:29.440" endtime="20190801 16:06:29.441"></status>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<doc>Send a POST request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>lemon</arg>
+<arg>${url}</arg>
+<arg>data=${data}</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<msg timestamp="20190801 16:06:29.542" level="INFO">Post Request using : alias=lemon, uri=futureloan/mvc/api/member/register, data=&lt;empty&gt;, headers=None, files=None, allow_redirects=True </msg>
+<msg timestamp="20190801 16:06:29.542" level="INFO">${res} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20190801 16:06:29.442" endtime="20190801 16:06:29.542"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${expected}</arg>
+<arg>${res.status_code}</arg>
+</arguments>
+<msg timestamp="20190801 16:06:29.543" level="INFO">Argument types are:
+&lt;type 'unicode'&gt;
+&lt;class 'int'&gt;</msg>
+<status status="PASS" starttime="20190801 16:06:29.543" endtime="20190801 16:06:29.544"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${res.status_code}</arg>
+</arguments>
+<msg timestamp="20190801 16:06:29.545" level="INFO">200</msg>
+<status status="PASS" starttime="20190801 16:06:29.544" endtime="20190801 16:06:29.545"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${res.json()}</arg>
+</arguments>
+<msg timestamp="20190801 16:06:29.546" level="INFO">{'status': 0, 'code': '20103', 'data': None, 'msg': '手机号不能为空'}</msg>
+<status status="PASS" starttime="20190801 16:06:29.545" endtime="20190801 16:06:29.546"></status>
+</kw>
+<status status="PASS" starttime="20190801 16:06:29.439" endtime="20190801 16:06:29.547"></status>
+</kw>
+<status status="PASS" starttime="20190801 16:06:29.438" endtime="20190801 16:06:29.547"></status>
+</kw>
+<status status="PASS" starttime="20190801 16:06:29.437" endtime="20190801 16:06:29.547"></status>
+</kw>
+<status status="PASS" starttime="20190801 16:06:29.435" endtime="20190801 16:06:29.548" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-t2" name="登录接口1">
+<kw name="接口请求">
+<arguments>
+<arg>get</arg>
+<arg>futureloan/mvc/api/member/register</arg>
+<arg>${data1}</arg>
+<arg>200</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${method}"=="post"</arg>
+<arg>post接口请求</arg>
+<arg>url=${url}</arg>
+<arg>data=${data}</arg>
+<arg>expected=${expected}</arg>
+<arg>ELSE IF</arg>
+<arg>"${method}"=="get"</arg>
+<arg>get接口请求</arg>
+<arg>url=${url}</arg>
+<arg>data=${data}</arg>
+<arg>expected= ${expected}</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>不适用此方法</arg>
+</arguments>
+<kw name="get接口请求">
+<arguments>
+<arg>url=${url}</arg>
+<arg>data=${data}</arg>
+<arg>expected= ${expected}</arg>
+</arguments>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>lemon</arg>
+<arg>http://test.lemonban.com/</arg>
+</arguments>
+<msg timestamp="20190801 16:06:29.553" level="INFO">Creating Session using : alias=lemon, url=http://test.lemonban.com/, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20190801 16:06:29.552" endtime="20190801 16:06:29.554"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>lemon</arg>
+<arg>${url}</arg>
+<arg>params=${data}</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<msg timestamp="20190801 16:06:29.686" level="INFO">Get Request using : alias=lemon, uri=futureloan/mvc/api/member/register, headers=None json=None</msg>
+<msg timestamp="20190801 16:06:29.687" level="INFO">${res} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20190801 16:06:29.554" endtime="20190801 16:06:29.687"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${expected}</arg>
+<arg>${res.status_code}</arg>
+</arguments>
+<msg timestamp="20190801 16:06:29.688" level="INFO">Argument types are:
+&lt;type 'unicode'&gt;
+&lt;class 'int'&gt;</msg>
+<status status="PASS" starttime="20190801 16:06:29.688" endtime="20190801 16:06:29.689"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${res.status_code}</arg>
+</arguments>
+<msg timestamp="20190801 16:06:29.690" level="INFO">200</msg>
+<status status="PASS" starttime="20190801 16:06:29.689" endtime="20190801 16:06:29.690"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${res.json()}</arg>
+</arguments>
+<msg timestamp="20190801 16:06:29.691" level="INFO">{'status': 0, 'code': '20110', 'data': None, 'msg': '手机号码已被注册'}</msg>
+<status status="PASS" starttime="20190801 16:06:29.691" endtime="20190801 16:06:29.692"></status>
+</kw>
+<status status="PASS" starttime="20190801 16:06:29.551" endtime="20190801 16:06:29.692"></status>
+</kw>
+<status status="PASS" starttime="20190801 16:06:29.550" endtime="20190801 16:06:29.693"></status>
+</kw>
+<status status="PASS" starttime="20190801 16:06:29.550" endtime="20190801 16:06:29.693"></status>
+</kw>
+<status status="PASS" starttime="20190801 16:06:29.548" endtime="20190801 16:06:29.693" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-t3" name="登录接口1">
+<kw name="接口请求">
+<arguments>
+<arg>get1</arg>
+<arg>futureloan/mvc/api/member/register</arg>
+<arg>${data1}</arg>
+<arg>200</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${method}"=="post"</arg>
+<arg>post接口请求</arg>
+<arg>url=${url}</arg>
+<arg>data=${data}</arg>
+<arg>expected=${expected}</arg>
+<arg>ELSE IF</arg>
+<arg>"${method}"=="get"</arg>
+<arg>get接口请求</arg>
+<arg>url=${url}</arg>
+<arg>data=${data}</arg>
+<arg>expected= ${expected}</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>不适用此方法</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>不适用此方法</arg>
+</arguments>
+<msg timestamp="20190801 16:06:29.699" level="INFO">不适用此方法</msg>
+<status status="PASS" starttime="20190801 16:06:29.698" endtime="20190801 16:06:29.699"></status>
+</kw>
+<status status="PASS" starttime="20190801 16:06:29.697" endtime="20190801 16:06:29.699"></status>
+</kw>
+<status status="PASS" starttime="20190801 16:06:29.696" endtime="20190801 16:06:29.700"></status>
+</kw>
+<status status="PASS" starttime="20190801 16:06:29.694" endtime="20190801 16:06:29.704" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20190801 16:06:29.339" endtime="20190801 16:06:29.707"></status>
+</suite>
+<status status="PASS" starttime="20190801 16:06:29.335" endtime="20190801 16:06:29.712"></status>
+</suite>
+<status status="PASS" starttime="20190801 16:06:29.311" endtime="20190801 16:06:29.717"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0">Critical Tests</stat>
+<stat pass="3" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" id="s1" name="YX-api">YX-api</stat>
+<stat pass="3" fail="0" id="s1-s1" name="TestCases">YX-api.TestCases</stat>
+<stat pass="3" fail="0" id="s1-s1-s1" name="Inter Get quest">YX-api.TestCases.Inter Get quest</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20190801 16:06:29.694" level="WARN">Multiple test cases with name '登录接口1' executed in test suite 'YX-api.TestCases.Inter Get quest'.</msg>
+</errors>
+</robot>

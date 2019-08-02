@@ -1,0 +1,11 @@
+*** Settings ***
+Library    RequestsLibrary    
+
+*** Keywords ***
+接口请求
+    [Arguments]    ${url}
+    Create Session    lemon    http://test.lemonban.com/
+    ${res}=    Get Request    lemon    ${url}
+*** Test Cases ***
+
+        

@@ -1,0 +1,6 @@
+#Wed Jul 24 13:52:59 CST 2019
+__DEFAULT__=false
+org.eclipse.sdk.Eclipse.master=true
+org.eclipse.sdk.Google.master=true
+org.eclipse.help.ui.localSearch.master=true
+expression=Robot Table Editor

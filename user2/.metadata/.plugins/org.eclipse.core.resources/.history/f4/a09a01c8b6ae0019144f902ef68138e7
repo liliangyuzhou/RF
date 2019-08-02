@@ -1,0 +1,3 @@
+*** Settings ***
+Library    Requests
+*** Test Cases ***

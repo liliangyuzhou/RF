@@ -1,0 +1,3 @@
+*** Settings ***
+Library    mylibrary/exceldo.py         
+*** Test Cases ***

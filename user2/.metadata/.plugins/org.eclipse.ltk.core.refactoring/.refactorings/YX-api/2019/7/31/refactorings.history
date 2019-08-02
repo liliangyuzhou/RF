@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;YX-api/TestCases/Inter_quest.robot&apos; to &apos;Inter_Get_quest.robot&apos;" description="Rename resource &apos;Inter_quest.robot&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="TestCases/Inter_quest.robot" name="Inter_Get_quest.robot" stamp="1564475258852" updateReferences="true"/>
+</session>
